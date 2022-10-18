@@ -1,0 +1,1 @@
+//na teams jest kod do skopiowania bo podczas pisania usunąłeś to idioto i teraz się martw
