@@ -1,11 +1,16 @@
 
 const calculate = () => {
-    const firstNumber = prompt("Podaj pierwszą liczbę")
-    const secondNumber = prompt("Podaj drugą liczbę")
-    Number(firstNumber)
-    console.log(typeof firstNumber)
-    if (typeof firstNumber === Number) {
-        alert("NUMER")
+    const firstNumber = Number(prompt("Podaj pierwszą liczbę"))
+    const secondNumber = Number(prompt("Podaj drugą liczbę"))
+    
+    const firstNumberType = isNaN(firstNumber)
+    //Number(firstNumber)
+    console.log(firstNumber)
+    //console.log(typeof firstNumber)
+    if (firstNumberType) {
+        alert("NaN")
+    } else {
+        alert("Number")
     }
     
 }
