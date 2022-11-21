@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="skrypt.js"></script>
 </head>
 <body>
-
-<button onclick="calculate()">Policz podzielność</button>
 
 </body>
 </html>
