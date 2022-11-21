@@ -25,10 +25,19 @@ const calculateZad1 = () => {
         console.log('Tablica nie zawiera średniej')
     }
     function compareNumbers(a, b) {
-        return b - a;
+        return a - b;
       }
     console.log('Posortowana rosnąco tabela:' + numberArray.sort(compareNumbers))
-    let uniqueArray = []
+    
+    let uniqueArray = [1]
+    numberArray.reduce((previousValue, currentValue) => {
+            if (uniqueArray.includes(currentValue)) {
+                console.log("juz ma")
+            } else {
+                uniqueArray.push(currentValue);
+            }
+
+        })
     // uniqueArray = numberArray.reduce(stage => {
     //     if (uniqueArray.includes(stage)) {
     //         return 0
