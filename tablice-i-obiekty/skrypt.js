@@ -29,7 +29,7 @@ const calculateZad1 = () => {
       }
     console.log('Posortowana rosnąco tabela:' + numberArray.sort(compareNumbers))
     
-    let uniqueArray = [1]
+    let uniqueArray = []
     numberArray.reduce((previousValue, currentValue) => {
             if (uniqueArray.includes(currentValue)) {
                 console.log("juz ma")
@@ -38,13 +38,6 @@ const calculateZad1 = () => {
             }
 
         })
-    // uniqueArray = numberArray.reduce(stage => {
-    //     if (uniqueArray.includes(stage)) {
-    //         return 0
-    //     }
-    //       uniqueArray.push(stage)
- 
-    // })
     console.log(uniqueArray)
 
 
