@@ -1,0 +1,30 @@
+<html>
+<head>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        * + * {
+            margin-top: 15px;
+        }
+    </style>
+    <script src="main.js"></script>
+</head>
+
+<body>
+<form id="form" name="register">
+    <div id="divEmail">
+        <label for="email">Email</label>
+        <input type="text" name='email' id="email"/>
+    </div>
+    <div id="divPass">
+        <label for="password">Password</label>
+        <input type="password" name='password' id="password"/>
+    </div>
+    <button type="submit">Zarejestruj</button>
+</form>
+</body>
+</html>

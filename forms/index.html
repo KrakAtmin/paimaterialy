@@ -1,0 +1,54 @@
+<html>
+<head>
+    <script src="main.js"></script>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        * + * {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+<form id="form" name="register" method="get">
+    <div>
+        <label for="firstName">First name</label>
+        <input type="text" name='firstName' id="firstName"/>
+    </div>
+    <div>
+        <label for="lastName">Last name</label>
+        <input type="text" name='lastName' id="lastName"/>
+    </div>
+    <div>Ulubiony język? <br>
+        <input type="radio" id="html" name="favouriteLanguage" value="HTML">
+        <label for="html">HTML</label><br>
+        <input type="radio" id="css" name="favouriteLanguage" value="CSS">
+        <label for="css">CSS</label><br>
+        <input type="radio" id="javascript" name="favouriteLanguage" value="JavaScript">
+    <label for="javascript">JavaScript</label>
+    </div>
+    <div>
+        <input type="checkbox" name='isAdult' id="isAdult"/>
+        <label for="isAdult">Czy jestes pelnoletni</label>
+    </div>
+    <div>
+        <label for="class">Jaka klasa?</label>
+
+        <select name="class" id="class">
+            <option value="1inf">1 informatyczna</option>
+            <option value="2inf">2 informatyczna</option>
+            <option value="3infA">3 informatyczna</option>
+            <option value="4inf">4 informatyczna</option>
+        </select>
+    </div>
+    <div>
+        <button type="submit">Zapisz</button>
+    </div>
+</form>
+</body>
+</html>
