@@ -1,0 +1,34 @@
+<html>
+<head>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        * + * {
+            margin-top: 15px;
+        }
+    </style>
+    <script src="main.js"></script>
+</head>
+
+<body>
+<form id="form" name="tax-value">
+    <div>
+        <label for="email">Email</label>
+        <input type="text" name='email' id="email"/>
+    </div>
+    <div>
+        <label for="money">Kwota</label>
+        <input type="number" name='money' id="money"/>
+    </div>
+    <div>
+        <label for="tax">Podatek</label>
+        <input type="number" name='tax' id="tax"/>
+    </div>
+    <button type="submit">Oblicz należny podatek</button>
+</form>
+</body>
+</html>
