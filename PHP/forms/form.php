@@ -57,10 +57,14 @@
     <button type="submit">Logout</button>
 </form>
 <?php
+
 if (isset($_POST['email'])) echo("Email:".$_POST['email']."\n");
 if ($_POST['password'] === $_POST['password2']) echo("Password:".$_POST['password2']."\n");
-$_SESSION['email'] = $_POST['email'];
-$_SESSION['password'] = $_POST['password'];
+if (isset($_POST['email'])) {
+    $_SESSION['email'] = $_POST['email'];
+    $_SESSION['password'] = $_POST['password'];
+}
+
 ?>
 </body>
 </html>
