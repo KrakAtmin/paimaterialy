@@ -1,0 +1,11 @@
+Imie,Nazwisko,Wiek
+Antoni,Pająk,24
+Oskar,Włodarczyk,37
+Julia,Górska,19
+Aleksandra,Nowak,27
+Marek,Lewandowski,33
+Kamil,Nowicki,40
+Kasia,Stasiak,22,
+Kacper,Krupa,18
+Anastazja,Kowalska,31
+Michał,Jaworski,29
