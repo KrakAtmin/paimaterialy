@@ -23,8 +23,8 @@ $wiersz = $_GET['id'];
 <button type="submit">submit</button> 
 </form>
 <?php
-if (!empty($_POST['text0']) && !empty($_POST['text1']) && !empty($_POST['text2'])) {
-$changeArray = [$_POST['text0'], $_POST['text1'], $_POST['text2'],PHP_EOL];
+if (!empty($_POST['first_name']) && !empty($_POST['text1']) && !empty($_POST['text2'])) {
+$changeArray = [$_POST['first_name'], $_POST['text1'], $_POST['text2'],PHP_EOL];
 $imploded = implode(',', $changeArray);
 
 
