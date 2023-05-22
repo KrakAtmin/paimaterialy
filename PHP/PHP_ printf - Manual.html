@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://www.php.net/manual/en/function.printf.php -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PHP: printf - Manual </title>
+
+ <link rel="icon" type="image/svg+xml" sizes="any" href="https://www.php.net/favicon.svg?v=2">
+ <link rel="icon" type="image/png" sizes="196x196" href="https://www.php.net/favicon-196x196.png?v=2">
+ <link rel="icon" type="image/png" sizes="32x32" href="https://www.php.net/favicon-32x32.png?v=2">
+ <link rel="icon" type="image/png" sizes="16x16" href="https://www.php.net/favicon-16x16.png?v=2">
+ <link rel="shortcut icon" href="https://www.php.net/favicon.ico?v=2">
+
+ <link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="https://www.php.net/releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="https://www.php.net/feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="https://www.php.net/manual/en/function.printf.php">
+ <link rel="shorturl" href="https://www.php.net/printf">
+ <link rel="alternate" href="https://www.php.net/printf" hreflang="x-default">
+
+ <link rel="contents" href="https://www.php.net/manual/en/index.php">
+ <link rel="index" href="https://www.php.net/manual/en/ref.strings.php">
+ <link rel="prev" href="https://www.php.net/manual/en/function.print.php">
+ <link rel="next" href="https://www.php.net/manual/en/function.quoted-printable-decode.php">
+
+ <link rel="alternate" href="https://www.php.net/manual/en/function.printf.php" hreflang="en">
+ <link rel="alternate" href="https://www.php.net/manual/pt_BR/function.printf.php" hreflang="pt_BR">
+ <link rel="alternate" href="https://www.php.net/manual/zh/function.printf.php" hreflang="zh">
+ <link rel="alternate" href="https://www.php.net/manual/fr/function.printf.php" hreflang="fr">
+ <link rel="alternate" href="https://www.php.net/manual/de/function.printf.php" hreflang="de">
+ <link rel="alternate" href="https://www.php.net/manual/ja/function.printf.php" hreflang="ja">
+ <link rel="alternate" href="https://www.php.net/manual/ru/function.printf.php" hreflang="ru">
+ <link rel="alternate" href="https://www.php.net/manual/es/function.printf.php" hreflang="es">
+ <link rel="alternate" href="https://www.php.net/manual/tr/function.printf.php" hreflang="tr">
+
+<link rel="stylesheet" type="text/css" href="./PHP_ printf - Manual_files/cached.php" media="screen">
+<link rel="stylesheet" type="text/css" href="./PHP_ printf - Manual_files/cached(1).php" media="screen">
+<link rel="stylesheet" type="text/css" href="./PHP_ printf - Manual_files/cached(2).php" media="screen">
+<link rel="stylesheet" type="text/css" href="./PHP_ printf - Manual_files/cached(3).php" media="screen">
+
+ <!--<base href="https://www.php.net/manual/en/function.printf.php">--><base href=".">
+
+
+<style type="text/css" id="operaUserStyle"></style><style type="text/css">:root zeus-ad, :root topadblock, :root span[id^="ezoic-pub-ad-placeholder-"], :root guj-ad, :root gpt-ad, :root div[jsdata*="CarouselPLA-"][data-id^="CarouselPLA-"], :root div[id^="zergnet-widget"], :root div[id^="yandex_ad"], :root div[id^="vuukle-ad-"], :root div[id^="sticky_ad_"], :root div[id^="rc-widget-"], :root div[id^="gpt_ad_"], :root div[id^="ezoic-pub-ad-"], :root div[id^="div-gpt-"], :root div[id^="dfp-ad-"], :root div[id^="advads_ad_"], :root div[id^="adspot-"], :root div[id^="ads300_250-widget-"], :root div[id^="ads300_100-widget-"], :root div[id^="ads250_250-widget-"], :root div[id^="adrotate_widgets-"], :root div[id^="adngin-"], :root div[id^="_vdo_ads_player_ai_"], :root div[id*="ScriptRoot"], :root div[id*="MarketGid"], :root div[data-native_ad], :root div[data-mini-ad-unit], :root div[data-insertion], :root div[data-id-advertdfpconf], :root div[data-google-query-id], :root hl-adsense, :root div[data-contentexchange-widget], :root div[data-content="Advertisement"], :root div[data-alias="300x250 Ad 2"], :root div[data-alias="300x250 Ad 1"], :root div[data-adzone], :root div[data-adunit-path], :root div[data-ad-wrapper], :root div[data-ad-targeting], :root div[data-ad-placeholder], :root div[class^="native-ad-"], :root div[data-dfp-id], :root div[class^="kiwi-ad-wrapper"], :root div[class^="Adstyled__AdWrapper-"], :root div[aria-label="Ads"], :root display-ads, :root display-ad-component, :root aside[id^="adrotate_widgets-"], :root article.ad, :root ark-top-ad, :root app-advertisement, :root app-ad, :root amp-fx-flying-carpet, :root amp-embed[type="taboola"], :root amp-connatix-player, :root amp-ad-custom, :root ad-shield-ads, :root a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"][target="_blank"] + .ob_source, :root citrus-ad-wrapper, :root a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"][target="_blank"], :root a[onmousedown^="this.href='http://paid.outbrain.com/network/redir?"][target="_blank"] + .ob_source, :root a[href^="https://yogacomplyfuel.com/"], :root a[href^="https://www.purevpn.com/"][href*="&utm_source=aff-"], :root a[href^="https://www.privateinternetaccess.com/"] > img, :root a[href^="https://www.onlineusershielder.com/"], :root a[href^="https://www.nutaku.net/signup/landing/"], :root a[href^="https://www.nudeidols.com/cams/"], :root a[href^="https://www.mypornstarcams.com/landing/click/"], :root a[href^="https://www.kingsoffetish.com/tour?partner_id="], :root a[href^="https://www.infowarsstore.com/"] > img, :root a[href^="https://www.highcpmrevenuenetwork.com/"], :root a[href^="https://www.goldenfrog.com/vyprvpn?offer_id="][href*="&aff_id="], :root a[href^="https://www.get-express-vpn.com/offer/"], :root a[href^="https://www.financeads.net/tc.php?"], :root a[href^="https://www.brazzersnetwork.com/landing/"], :root div[class^="Display_displayAd"], :root a[href^="https://www.sheetmusicplus.com/?aff_id="], :root a[href^="https://www.bang.com/?aff="], :root [data-template-type="nativead"], :root a[href^="https://www.adultempire.com/"][href*="?partner_id="], :root a[href^="https://webroutetrk.com/"], :root a[href^="https://twinrdsyn.com/"], :root a[href^="https://tsartech.g2afse.com/"], :root [href^="https://www.mypatriotsupply.com/"] > img, :root a[href^="https://trk.softonixs.xyz/"], :root a[href^="https://trk.nfl-online-streams.club/"], :root a[href^="https://tracking.avapartner.com/"], :root a[href^="https://track.afcpatrk.com/"], :root a[href^="https://track.adform.net/"], :root a[href^="https://torguard.net/aff.php"] > img, :root div[data-adname], :root a[href^="https://thechleads.pro/"], :root [data-role="tile-ads-module"], :root a[href^="https://adsrv4k.com/"], :root a[href^="https://go.xlviirdr.com"], :root a[href^="https://thaudray.com/"], :root a[href^="https://www.5mno3.com/"], :root a[href^="https://taghaugh.com/"], :root a[href^="https://click.candyoffers.com/"], :root [href^="https://zstacklife.com/"] img, :root a[href^="https://t.aslnk.link/"], :root a[href^="https://t.adating.link/"], :root a[href^="https://go.trackitalltheway.com/"], :root [href^="https://track.fiverr.com/visit/"] > img, :root a[href^="https://syndication.exoclick.com/"], :root a[href^="https://syndication.dynsrvtbg.com/"], :root a[href^="https://streamate.com/landing/click/"], :root a[href^="https://ad.doubleclick.net/"], :root a[href^="https://static.fleshlight.com/images/banners/"], :root a[href^="https://go.strpjmp.com/"], :root a[href^="https://refpa4903566.top/"], :root a[href^="https://prf.hn/click/"][href*="/camref:"] > img, :root a[href^="https://serve.awmdelivery.com/"], :root a[href^="https://prf.hn/click/"][href*="/adref:"] > img, :root [href^="https://r.kraken.com/"], :root a[href^="https://mmwebhandler.aff-online.com/"], :root a[href^="https://www.bet365.com/"][href*="affiliate="], :root a[href^="https://pb-track.com/"], :root a[href^="https://paid.outbrain.com/network/redir?"], :root div[id^="ad_position_"], :root a[href^="https://ovb.im/"], :root div[id^="ad-div-"], :root a[href^="https://newbinotracs.com/"], :root a[href^="https://natour.naughtyamerica.com/track/"], :root [href^="https://stvkr.com/"], :root a[href^="https://mediaserver.entainpartners.com/renderBanner.do?"], :root [href^="https://www.herbanomic.com/"] > img, :root a[href^="https://maymooth-stopic.com/"], :root a[href^="https://loboclick.com"], :root [href^="https://routewebtk.com/"], :root a[href^="https://see.kmisln.com/"], :root .nya-slot[style], :root a[href^="https://a.bestcontentweb.top/"], :root a[href^="https://lobimax.com/"], :root a[href^="https://lead1.pl/"], :root a[href^="https://refpa.top/"], :root a[href^="https://landing.brazzersnetwork.com/"], :root a[href^="https://ads.leovegas.com/redirect.aspx?"], :root a[href^="https://land.brazzersnetwork.com/landing/"], :root a[href^="https://juicyads.in/"], :root a[href^="https://itubego.com/video-downloader/?affid="], :root a[href^="https://iqbroker.com/"][href*="?aff="], :root a[href^="https://incisivetrk.cvtr.io/click?"], :root [data-revive-zoneid], :root a[href^="https://googleads.g.doubleclick.net/pcs/click"], :root a[href^="https://clk.wrenchsound.store/"], :root a[href^="https://go.zybrdr.com"], :root [href^="http://join.michelle-austin.com/"], :root [class^="tile-picker__CitrusBannerContainer-sc-"], :root a[href^="https://go.xxxiijmp.com"], :root a[href^="https://go.xtbaffiliates.com/"], :root a[href^="https://ismlks.com/"], :root a[href^="//a.bestcontentfare.top/"], :root [href^="https://www.mypillow.com/"] > img, :root a[href^="https://azpresearch.club/"], :root a[href^="https://go.xlirdr.com"], :root [data-css-class="dfp-inarticle"], :root .card-captioned.crd > .crd--cnt > .s2nPlayer, :root a[href^="https://go.tmrjmp.com"], :root a[href^="https://go.skinstrip.net"][href*="?campaignId="], :root a[href^="https://go.markets.com/visit/?bta="], :root a[href^="https://billing.purevpn.com/aff.php"] > img, :root a[href^="https://go.hpyrdr.com/"], :root a[href^="https://go.goaserv.com/"], :root a[href^="https://track.wg-aff.com"], :root a[href^="https://go.ebrokerserve.com/"], :root a[href^="https://go.dmzjmp.com"], :root a[href^="https://twinrdsrv.com/"], :root a[href^="https://go.admjmp.com/"], :root [href^="https://kingered-banctours.com/"], :root a[href^="https://get.surfshark.net/aff_c?"][href*="&aff_id="] > img, :root a-ad, :root a[href^="https://affiliate.rusvpn.com/click.php?"], :root a[href^="https://geniusdexchange.com/"], :root a[href^="https://frameworkdeserve.com/"], :root a[href^="https://flirtandsweets.life/"], :root a[href^="https://www.mrskin.com/tour"], :root a[href^="https://financeads.net/tc.php?"], :root a[href^="https://www.mrskin.com/account/"], :root a[href^="https://s.optzsrv.com/"], :root bottomadblock, :root a[href^="https://fertilitycommand.com/"], :root [data-freestar-ad], :root a[href^="https://fc.lc/ref/"], :root div[data-native-ad], :root a[href^="https://engine.trackingdesks.com/"], :root [href^="https://totlnkcl.com/"], :root a[href^="https://www.adskeeper.com"], :root a[data-redirect^="https://paid.outbrain.com/network/redir?"], :root [href^="https://www.reimageplus.com/"], :root a[href^="https://engine.phn.doublepimp.com/"], :root a[href^="https://engine.blueistheneworanges.com/"], :root div[id^="optidigital-adslot"], :root a[href^="https://wantopticalfreelance.com/"], :root a[href^="https://dl-protect.net/"], :root a[href^="https://datingoffers30.info/"], :root a[href^="https://clixtrac.com/"], :root a[href^="https://mediaserver.gvcaffiliates.com/renderBanner.do?"], :root a[href^="https://join.dreamsexworld.com/"], :root a[href^="https://click.linksynergy.com/fs-bin/"], :root AD-TRIPLE-BOX, :root a[href^="https://click.hoolig.app/"], :root a[href^="https://track.totalav.com/"], :root img[src^="https://images.purevpnaffiliates.com"], :root a[href^="https://porntubemate.com/"], :root a[href^="http://www.gfrevenge.com/landing/"], :root a[href^="https://clickadilla.com/"], :root a[href^="https://click.dtiserv2.com/"], :root a[href^="https://go.xlvirdr.com"], :root a[href^="https://claring-loccelkin.com/"], :root [class^="s2nPlayer"], :root a[href^="https://chaturbate.jjgirls.com/?track="], :root a[href^="https://chaturbate.com/in/?track="], :root a[href^="https://chaturbate.com/in/?tour="], :root a[href^="https://cams.imagetwist.com/in/?track="], :root a[href^="https://cam4com.go2cloud.org/"], :root a[href^="https://affcpatrk.com/"], :root a[href^="https://bongacams2.com/track?"], :root a[href^="https://www.sheetmusicplus.com/"][href*="?aff_id="], :root a[href^="https://bngpt.com/"], :root a[href^="https://bluedelivery.pro/"], :root #topstuff > #tads, :root a[href^="https://black77854.com/"], :root a[href^="https://bc.game/"], :root a[href^="https://ndt5.net/"], :root a[href^="https://batheunits.com/"], :root a[target="_blank"][onmousedown="this.href^='http://paid.outbrain.com/network/redir?"], :root a[href^="https://banners.livepartners.com/"], :root a[href^="//whulsaux.com/"], :root a[href^="https://m.do.co/c/"] > img, :root [href="https://masstortfinancing.com"] img, :root a[href^="https://bongacams10.com/track?"], :root a[href^="https://albionsoftwares.com/"], :root a[href^="https://t.hrtye.com/"], :root a[href^="https://go.etoro.com/"] > img, :root a[href^="https://www.adxsrve.com/"], :root a[href^="https://convertmb.com/"], :root a[href^="https://join.sexworld3d.com/track/"], :root a[href^="https://intenseaffiliates.com/redirect/"], :root a[href^="https://aweptjmp.com/"], :root a[href^="https://ads.ad4game.com/"], :root [id^="google_ads_iframe"], :root a[href^="https://syndication.optimizesrv.com/"], :root a[href^="https://affpa.top/"], :root a[href^="https://adnetwrk.com/"], :root a[href^="https://adjoincomprise.com/"], :root [href^="http://misslinkvocation.com/"], :root a[href^="https://adclick.g.doubleclick.net/"], :root a[href^="https://go.nordvpn.net/aff"] > img, :root [href^="http://clicks.totemcash.com/"], :root a[href^="https://misspkl.com/"], :root a[href^="https://ad.zanox.com/ppc/"] > img, :root a[href^="https://ad.kubiccomps.icu/"], :root a[href^="https://adswick.com/"], :root a[href^="https://a2.adform.net/"], :root a[href^="https://iactrivago.ampxdirect.com/"], :root a[href^="https://a.medfoodhome.com/"], :root a[href^="https://a.bestcontentoperation.top/"], :root [data-m-ad-id], :root a[href^="https://a-ads.com/"], :root [href="https://ourgoldguy.com/contact/"] img, :root a[href^="https://brightadnetwork.com/"], :root [href^="https://www.avantlink.com/click.php"] img, :root a[href^="http://www.onwebcam.com/random?t_link="], :root a[href^="http://www.mrskin.com/tour"], :root a[href^="https://agacelebir.com/"], :root a[href^="https://spygasm.com/track?"], :root a[href^="http://d2.zedo.com/"], :root a[href^="http://www.friendlyduck.com/AF_"], :root a[href^="http://trk.globwo.online/"], :root a[href^="https://prf.hn/click/"][href*="/creativeref:"] > img, :root a[href^="http://www.adultempire.com/unlimited/promo?"][href*="&partner_id="], :root a[href^="http://traffic.tc-clicks.com/"], :root a[href^="http://tour.mrskin.com/"], :root a[href^="https://join.virtualtaboo.com/track/"], :root a[href^="https://funkydaters.com/"], :root [id^="ad_sky"], :root a[href^="http://https://www.get-express-vpn.com/offer/"], :root div[id^="google_dfp_"], :root a[href^="http://googleads.g.doubleclick.net/pcs/click"], :root .rc-cta[data-target], :root [href^="http://go.cm-trk2.com/"], :root a[href^="http://click.payserve.com/"], :root a[href^="https://porngames.adult/?SID="], :root a[href^="https://landing1.brazzersnetwork.com"], :root #slashboxes > .deals-rail, :root [href^="http://globsads.com/"], :root [href^="https://www.brighteonstore.com/products/"] img, :root a[href^="http://bc.vc/?r="], :root a[href^="https://mityneedn.com/"], :root [href^="http://homemoviestube.com/"], :root a[href^="http://ad.doubleclick.net/"], :root a[href^="//zunsoach.com/"], :root a[href^="http://static.fleshlight.com/images/banners/"], :root a[href^="https://a.adtng.com/"], :root a[href^="//pubads.g.doubleclick.net/"], :root a[href^="//go.eabids.com/"], :root [data-d-ad-id], :root a[href*=".engine.adglare.net/"], :root [data-dynamic-ads], :root a[data-widget-outbrain-redirect^="http://paid.outbrain.com/network/redir?"], :root [data-ad-width], :root [href^="https://join.playboyplus.com/track/"], :root a[data-url^="http://paid.outbrain.com/network/redir?"] + .author, :root a[href^="https://axdsz.pro/"], :root a[href^="http://bodelen.com/"], :root a[data-oburl^="https://paid.outbrain.com/network/redir?"], :root [href^="https://cpa.10kfreesilver.com/"], :root a[href^="https://a.bestcontentfood.top/"], :root a[href^="https://reinstandpointdumbest.com/"], :root a[data-obtrack^="http://paid.outbrain.com/network/redir?"], :root a[href^="http://wct.link/"], :root [href^="https://goldforyourfuture.com/clk.trk"] img, :root [href^="https://infinitytrk.com/"], :root [onclick^="location.href='http://www.reimageplus.com"], :root .commercial-unit-mobile-top .jackpot-main-content-container > .UpgKEd + .nZZLFc > .vci, :root [id^="section-ad-banner"], :root .commercial-unit-mobile-top > div[data-pla="1"], :root a[href^="https://go.julrdr.com/"], :root .trc_rbox_div .syndicatedItemUB, :root [href^="https://zone.gotrackier.com/"], :root [href^="https://www.targetingpartner.com/"], :root [href^="https://detachedbates.com/"], :root a[href^="https://fourwhenstatistics.com/"], :root [href^="https://www.restoro.com/"], :root [href^="https://ilovemyfreedoms.com/landing-"], :root a[href^="https://staRTgaming.net/tienda/"], :root a[href^="https://STaRtgAmInG.net/tienda/"], :root a[href^="https://fastestvpn.com/lifetime-special-deal?a_aid="], :root a[href^="https://tour.mrskin.com/"], :root div[id^="ad-position-"], :root a[href^="http://adultfriendfinder.com/go/page/landing"], :root a[href^="http://affiliate.glbtracker.com/"], :root a[href^="https://leg.xyz/?track="], :root div[id^="crt-"][style], :root a[href^="http://adultgames.xxx/"], :root a[href^="https://traffic.bannerator.com/"], :root [href^="https://shiftnetwork.infusionsoft.com/go/"] > img, :root a[onmousedown^="this.href='http://paid.outbrain.com/network/redir?"][target="_blank"], :root [href^="https://secure.bmtmicro.com/servlets/"], :root a[href^="https://losingoldfry.com/"], :root .scroll-fixable.rail-right > .deals-rail, :root a[href^="https://oackoubs.com/"], :root a[href^="https://ak.psaltauw.net/"], :root a[href^="https://awptjmp.com/"], :root a[href^="https://go.goasrv.com/"], :root .commercial-unit-mobile-top > .v7hl4d, :root [href^="http://mypillow.com/"] > img, :root a[href^="http://bongacams.com/track?"], :root a[href^="https://fleshlight.sjv.io/"], :root [data-ad-manager-id], :root a[href^="https://promo-bc.com/"], :root a[href^="https://clicks.pipaffiliates.com/"], :root [href^="https://noqreport.com/"] > img, :root a[href^="https://go.hpyjmp.com"], :root ADS-RIGHT, :root [href^="https://mystore.com/"] > img, :root a[href^="https://www.highperformancecpmgate.com/"], :root a[href^="https://t.grtyi.com/"], :root [href^="https://mypatriotsupply.com/"] > img, :root [href^="https://mylead.global/stl/"] > img, :root #leader-companion > a[href], :root a[href^="https://transfer.xe.com/signup/track/redirect?"], :root .vid-present > .van_vid_carousel__padding, :root a[href^="https://go.xxxijmp.com"], :root [href^="https://istlnkcl.com/"], :root [href^="https://www.hostg.xyz/"] > img, :root .section-subheader > .section-hotel-prices-header, :root [href^="https://go.affiliatexe.com/"], :root [href^="https://go.4rabettraff.com/"], :root a[href^="https://tm-offers.gamingadult.com/"], :root [href^="https://charmingdatings.life/"], :root [href^="https://glersakr.com/"], :root ins.adsbygoogle, :root a[href^="https://1startfiledownload1.com/"], :root .trc_rbox_border_elm .syndicatedItem, :root a[href^="http://www.onclickmega.com/jump/next.php?"], :root a[href^="http://adf.ly/?id="], :root a[href^="https://wittered-mainging.com/"], :root [href^="https://engine.gettopple.com/"], :root a[href^="https://go.gldrdr.com/"], :root [data-id^="div-gpt-ad"], :root a[href^="https://tracker.loropartners.com/"], :root [href^="https://awbbjmp.com/"], :root a[href^="https://k2s.cc/pr/"], :root [href^="https://affect3dnetwork.com/track/"], :root a[href^="https://camfapr.com/landing/click/"], :root [href="//sexcams.plus/"], :root a[href^="https://go.currency.com/"], :root [href^="http://www.mypillow.com/"] > img, :root div[id^="div-ads-"], :root [href^="https://rapidgator.net/article/premium/ref/"], :root a[href^="https://www.sugarinstant.com/?partner_id="], :root a[href^="https://adultfriendfinder.com/go/page/landing"], :root [href^="https://join3.bannedsextapes.com"], :root div[data-spotim-slot], :root [href^="https://antiagingbed.com/discount/"] > img, :root a[href^="https://go.247traffic.com/"], :root [href^="https://join.girlsoutwest.com/"], :root [href^="http://trafficare.net/"], :root a[href^="https://tc.tradetracker.net/"] > img, :root a[href^="https://adserver.adreactor.com/"], :root [href^="http://join.shemalesfromhell.com/"], :root [id^="ad_slider"], :root #searchResultsList > div > div[onclick$="'inline.ad'});"], :root [data-adbridg-ad-class], :root a[href^="http://www.adultdvdempire.com/?partner_id="][href*="&utm_"], :root [href^="http://join.shemale.xxx/"], :root a[href^="https://ads.betfair.com/redirect.aspx?"], :root [href^="http://www.fleshlightgirls.com/"], :root [href^="http://join.trannies-fuck.com/"], :root .trc_rbox .syndicatedItem, :root a[href^="http://cam4com.go2cloud.org/aff_c?"], :root a[href^="https://cpmspace.com/"], :root [href^="https://freecourseweb.com/"] > .sitefriend, :root a[href^="https://thefacux.com/"], :root a[href^="https://ads.planetwin365affiliate.com/redirect.aspx?"], :root [href^="http://join.rodneymoore.com/"], :root a[href*=".trust.zone"], :root [href^="https://shrugartisticelder.com"], :root [href^="https://go.xlrdr.com"], :root a[href^="https://staRTgamIng.net/tienda/"], :root div[id^="lazyad-"], :root a[href^="http://com-1.pro/"], :root [name^="google_ads_iframe"], :root a[href^="https://go.xxxjmp.com"], :root [data-desktop-ad-id], :root [href^="https://wct.link/"], :root div[recirculation-ad-container], :root [href^="https://traffserve.com/"], :root #kt_player > a[target="_blank"], :root [href="https://www.masstortfinancing.com/"] > img, :root .ob_container .item-container-obpd, :root [id^="div-gpt-ad"], :root [href^="https://mypillow.com/"] > img, :root [href^="https://ad.admitad.com/"], :root a[href^="https://u.expresstech.io/"], :root a[href^="https://www.geekbuying.com/dynamic-ads/"], :root a[href^="https://lnkxt.bannerator.com/"], :root [href="https://jdrucker.com/gold"] > img, :root [href^="https://v.investologic.co.uk/"], :root [href^="https://cipledecline.buzz/"], :root a[href^="https://track.ultravpn.com/"], :root [href^="https://goldcometals.com/clk.trk"], :root [data-mobile-ad-id], :root a[href^="https://trk.sportsflix4k.club/"], :root a[href^="https://go.xlivrdr.com"], :root [onclick*="content.ad/"], :root AMP-AD, :root [data-ad-cls], :root [id^="ad-wrap-"], :root div[id^="taboola-stream-"], :root [href^="https://go.astutelinks.com/"], :root a[href^="http://tc.tradetracker.net/"] > img, :root a[href^="http://affiliates.thrixxx.com/"], :root [class^="amp-ad-"], :root [href^="https://affiliate.fastcomet.com/"] > img, :root [class^="adDisplay-module"], :root a[href^="http://go.xtbaffiliates.com/"], :root .grid > .container > #aside-promotion, :root DFP-AD, :root AD-SLOT, :root .ob_dual_right > .ob_ads_header ~ .odb_div, :root [href^="https://click2cvs.com/"], :root .trc_related_container div[data-item-syndicated="true"], :root [href^="http://join.shemalepornstar.com/"], :root a[href^="https://go.xlviiirdr.com"], :root .trc_rbox_div .syndicatedItem, :root a[href^="https://bs.serving-sys.com"], :root [href^="http://residenceseeingstanding.com/"], :root div[data-adunit], :root app-large-ad, :root [href^="https://turtlebids.irauctions.com/"] img, :root [data-ad-module], :root a[href^="https://go.cmtaffiliates.com/"], :root [data-name="adaptiveConstructorAd"], :root [href^="https://optimizedelite.com/"] > img, :root [href^="https://trackfin.asia/"], :root .plistaList > .plista_widget_underArticle_item[data-type="pet"], :root a[href*="//lkstrck2.com/"], :root .plistaList > .itemLinkPET, :root a[href^="https://startgAming.net/tienda/"], :root [href^="https://safer-redirection.com"], :root atf-ad-slot, :root .commercial-unit-mobile-top .jackpot-main-content-container > .UpgKEd + .nZZLFc > div > .vci, :root a[href^="http://partners.etoro.com/"], :root [data-advadstrackid], :root #atvcap + #tvcap > .mnr-c > .commercial-unit-mobile-top, :root a[href^="https://traffdaq.com/"], :root a[href^="https://www.googleadservices.com/pagead/aclk?"], :root a[href^="https://awentw.com/"], :root [class^="div-gpt-ad"], :root [href^="https://www.cloudways.com/en/?id"], :root a[href^="https://refpazkjixes.top/"], :root #mgb-container > #mgb, :root a[href^="https://join.virtuallust3d.com/"], :root #taw > .med + div > #tvcap > .mnr-c:not(.qs-ic) > .commercial-unit-mobile-top, :root [data-adblockkey], :root [data-ez-name] { display: none !important; }</style></head>
+<body class="docs ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="https://www.php.net/" class="brand"><img src="./PHP_ printf - Manual_files/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="https://www.php.net/downloads">Downloads</a></li>
+      <li class="active"><a href="https://www.php.net/docs.php">Documentation</a></li>
+      <li class=""><a href="https://www.php.net/get-involved">Get Involved</a></li>
+      <li class=""><a href="https://www.php.net/support">Help</a></li>
+      <li class="">
+        <a href="https://www.php.net/releases/8.2/index.php">
+          <img src="./PHP_ printf - Manual_files/logo_php8_2.svg" alt="php8.2" height="22" width="60">
+        </a>
+      </li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="https://www.php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <span class="twitter-typeahead" style="position: relative; display: inline-block;"><input class="tt-hint search-query" type="text" autocomplete="off" spellcheck="off" disabled="" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);"><input type="search" name="pattern" class="search-query tt-query" placeholder="Search" accesskey="s" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;"><input type="submit" style="visibility: hidden; position: fixed"><span style="position: absolute; left: -9999px; visibility: hidden; white-space: nowrap; font-family: &quot;Fira Sans&quot;, &quot;Source Sans Pro&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></span><span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;"></span></span>
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<nav id="trick"><div><dl>
+<dt><a href="https://www.php.net/manual/en/getting-started.php">Getting Started</a></dt>
+	<dd><a href="https://www.php.net/manual/en/introduction.php">Introduction</a></dd>
+	<dd><a href="https://www.php.net/manual/en/tutorial.php">A simple tutorial</a></dd>
+<dt><a href="https://www.php.net/manual/en/langref.php">Language Reference</a></dt>
+	<dd><a href="https://www.php.net/manual/en/language.basic-syntax.php">Basic syntax</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.types.php">Types</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.variables.php">Variables</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.constants.php">Constants</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.expressions.php">Expressions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.operators.php">Operators</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.control-structures.php">Control Structures</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.functions.php">Functions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.oop5.php">Classes and Objects</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.namespaces.php">Namespaces</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.enumerations.php">Enumerations</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.errors.php">Errors</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.exceptions.php">Exceptions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.fibers.php">Fibers</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.generators.php">Generators</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.attributes.php">Attributes</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.references.php">References Explained</a></dd>
+	<dd><a href="https://www.php.net/manual/en/reserved.variables.php">Predefined Variables</a></dd>
+	<dd><a href="https://www.php.net/manual/en/reserved.exceptions.php">Predefined Exceptions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/reserved.interfaces.php">Predefined Interfaces and Classes</a></dd>
+	<dd><a href="https://www.php.net/manual/en/reserved.attributes.php">Predefined Attributes</a></dd>
+	<dd><a href="https://www.php.net/manual/en/context.php">Context options and parameters</a></dd>
+	<dd><a href="https://www.php.net/manual/en/wrappers.php">Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href="https://www.php.net/manual/en/security.php">Security</a></dt>
+	<dd><a href="https://www.php.net/manual/en/security.intro.php">Introduction</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.general.php">General considerations</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.cgi-bin.php">Installed as CGI binary</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.apache.php">Installed as an Apache module</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.sessions.php">Session Security</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.filesystem.php">Filesystem Security</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.database.php">Database Security</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.errors.php">Error Reporting</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.variables.php">User Submitted Data</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.hiding.php">Hiding PHP</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.current.php">Keeping Current</a></dd>
+<dt><a href="https://www.php.net/manual/en/features.php">Features</a></dt>
+	<dd><a href="https://www.php.net/manual/en/features.http-auth.php">HTTP authentication with PHP</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.cookies.php">Cookies</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.sessions.php">Sessions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.xforms.php">Dealing with XForms</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.file-upload.php">Handling file uploads</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.remote-files.php">Using remote files</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.connection-handling.php">Connection handling</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.persistent-connections.php">Persistent Database Connections</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.commandline.php">Command line usage</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.gc.php">Garbage Collection</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.dtrace.php">DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href="https://www.php.net/manual/en/funcref.php">Function Reference</a></dt>
+	<dd><a href="https://www.php.net/manual/en/refs.basic.php.php">Affecting PHP's Behaviour</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.utilspec.audio.php">Audio Formats Manipulation</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.remote.auth.php">Authentication Services</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.utilspec.cmdline.php">Command Line Specific Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.compression.php">Compression and Archive Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.crypto.php">Cryptography Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.database.php">Database Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.calendar.php">Date and Time Related Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.fileprocess.file.php">File System Related Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.international.php">Human Language and Character Encoding Support</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.utilspec.image.php">Image Processing and Generation</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.remote.mail.php">Mail Related Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.math.php">Mathematical Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.utilspec.nontext.php">Non-Text MIME Output</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.fileprocess.process.php">Process Control Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.basic.other.php">Other Basic Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.remote.other.php">Other Services</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.search.php">Search Engine Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.utilspec.server.php">Server Specific Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.basic.session.php">Session Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.basic.text.php">Text Processing</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.basic.vartype.php">Variable and Type Related Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.webservice.php">Web Services</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.utilspec.windows.php">Windows Only Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.xml.php">XML Manipulation</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.ui.php">GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+  <div id="breadcrumbs" class="clearfix">
+    <div id="breadcrumbs-inner">
+          <div class="next">
+        <a href="https://www.php.net/manual/en/function.quoted-printable-decode.php">
+          quoted_printable_decode »
+        </a>
+      </div>
+              <div class="prev">
+        <a href="https://www.php.net/manual/en/function.print.php">
+          « print        </a>
+      </div>
+          <ul>
+            <li><a href="https://www.php.net/manual/en/index.php">PHP Manual</a></li>      <li><a href="https://www.php.net/manual/en/funcref.php">Function Reference</a></li>      <li><a href="https://www.php.net/manual/en/refs.basic.text.php">Text Processing</a></li>      <li><a href="https://www.php.net/manual/en/book.strings.php">Strings</a></li>      <li><a href="https://www.php.net/manual/en/ref.strings.php">String Functions</a></li>      </ul>
+    </div>
+  </div>
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+  <div class="page-tools">
+    <div class="change-language">
+      <form action="https://www.php.net/manual/change.php" method="get" id="changelang" name="changelang">
+        <fieldset>
+          <label for="changelang-langs">Change language:</label>
+          <select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+            <option value="en/function.printf.php" selected="selected">English</option>
+            <option value="pt_BR/function.printf.php">Brazilian Portuguese</option>
+            <option value="zh/function.printf.php">Chinese (Simplified)</option>
+            <option value="fr/function.printf.php">French</option>
+            <option value="de/function.printf.php">German</option>
+            <option value="ja/function.printf.php">Japanese</option>
+            <option value="ru/function.printf.php">Russian</option>
+            <option value="es/function.printf.php">Spanish</option>
+            <option value="tr/function.printf.php">Turkish</option>
+            <option value="help-translate.php">Other</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="edit-bug">
+      <a href="https://github.com/php/doc-en/blob/master/reference/strings/functions/printf.xml">Submit a Pull Request</a>
+      <a href="https://github.com/php/doc-en/issues/new?body=From%20manual%20page:%20https:%2F%2Fphp.net%2Ffunction.printf%0A%0A---">Report a Bug</a>
+    </div>
+  </div><div id="function.printf" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">printf</h1>
+  <p class="verinfo">(PHP 4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">printf</span> — <span class="dc-title">Output a formatted string</span></p>
+
+ </div>
+ 
+ <div class="refsect1 description" id="refsect1-function.printf-description">
+  <h3 class="title">Description<a class="genanchor" href="https://www.php.net/manual/en/function.printf.php#refsect1-function.printf-description"> ¶</a></h3>
+  <div class="methodsynopsis dc-description">
+   <span class="methodname"><strong>printf</strong></span>(<span class="methodparam"><span class="type">string</span> <code class="parameter">$format</code></span>, <span class="methodparam"><span class="type"><a href="https://www.php.net/manual/en/language.types.declarations.php#language.types.declarations.mixed" class="type mixed">mixed</a></span> <code class="parameter">...$values</code></span>): <span class="type">int</span></div>
+
+  <p class="simpara">
+   Produces output according to <code class="parameter">format</code>.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.printf-parameters">
+  <h3 class="title">Parameters<a class="genanchor" href="https://www.php.net/manual/en/function.printf.php#refsect1-function.printf-parameters"> ¶</a></h3>
+  <dl>
+    
+
+ <dt>
+<code class="parameter">format</code></dt>
+
+ <dd>
+
+  <p class="para">
+   The format string is composed of zero or more directives:
+   ordinary characters (excluding <code class="literal">%</code>) that are
+   copied directly to the result and <em class="emphasis">conversion
+   specifications</em>, each of which results in fetching its
+   own parameter.
+  </p>
+
+  <p class="para">
+   A conversion specification follows this prototype:
+   <code class="literal">%[argnum$][flags][width][.precision]specifier</code>.
+  </p>
+
+  <h5 class="title">Argnum</h5>
+   <p class="para">
+    An integer followed by a dollar sign <code class="literal">$</code>,
+    to specify which number argument to treat in the conversion.
+   </p>
+  
+
+  <table class="doctable table">
+    <caption><strong>Flags</strong></caption>
+    
+     <thead>
+      <tr>
+       <th>Flag</th>
+       <th>Description</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td><code class="literal">-</code></td>
+       <td>
+        Left-justify within the given field width;
+        Right justification is the default
+       </td>
+      </tr>
+
+      <tr>
+       <td><code class="literal">+</code></td>
+       <td>
+        Prefix positive numbers with a plus sign
+        <code class="literal">+</code>; Default only negative
+        are prefixed with a negative sign.
+       </td>
+      </tr>
+
+      <tr>
+       <td><code class="literal"> </code>(space)</td>
+       <td>
+        Pads the result with spaces.
+        This is the default.
+       </td>
+      </tr>
+
+      <tr>
+       <td><code class="literal">0</code></td>
+       <td>
+        Only left-pads numbers with zeros.
+        With <code class="literal">s</code> specifiers this can
+        also right-pad with zeros.
+       </td>
+      </tr>
+
+      <tr>
+       <td><code class="literal">'</code>(char)</td>
+       <td>
+        Pads the result with the character (char).
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  
+
+  <h5 class="title">Width</h5>
+   <p class="para">
+    Either an integer that says how many characters (minimum)
+    this conversion should result in, or <code class="literal">*</code>.
+    If <code class="literal">*</code> is used, then the width is supplied
+    as an additional integer value preceding the one formatted
+    by the specifier.
+   </p>
+  
+
+  <h5 class="title">Precision</h5>
+   <p class="para">
+    A period <code class="literal">.</code> optionally followed by
+    either an integer or <code class="literal">*</code>,
+    whose meaning depends on the specifier:
+    </p><ul class="itemizedlist">
+     <li class="listitem">
+      <span class="simpara">
+       For <code class="literal">e</code>, <code class="literal">E</code>,
+       <code class="literal">f</code> and <code class="literal">F</code>
+       specifiers: this is the number of digits to be printed
+       after the decimal point (by default, this is 6).
+      </span>
+     </li>
+     <li class="listitem">
+      <span class="simpara">
+       For <code class="literal">g</code>, <code class="literal">G</code>,
+       <code class="literal">h</code> and <code class="literal">H</code>
+       specifiers: this is the maximum number of significant
+       digits to be printed.
+      </span>
+     </li>
+     <li class="listitem">
+      <span class="simpara">
+       For <code class="literal">s</code> specifier: it acts as a cutoff point,
+       setting a maximum character limit to the string.
+      </span>
+     </li>
+    </ul>
+    <blockquote class="note"><p><strong class="note">Note</strong>: 
+     <span class="simpara">
+      If the period is specified without an explicit value for precision,
+      0 is assumed. If <code class="literal">*</code> is used, the precision is
+      supplied as an additional integer value preceding the one formatted
+      by the specifier.
+     </span>
+    </p></blockquote>
+   
+  
+
+  <table class="doctable table">
+    <caption><strong>Specifiers</strong></caption>
+    
+     <thead>
+      <tr>
+       <th>Specifier</th>
+       <th>Description</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td><code class="literal">%</code></td>
+       <td>
+        A literal percent character. No argument is required.
+       </td>
+      </tr>
+
+      <tr>
+       <td><code class="literal">b</code></td>
+       <td>
+        The argument is treated as an integer and presented
+        as a binary number.
+       </td>
+      </tr>
+
+      <tr>
+       <td><code class="literal">c</code></td>
+       <td>
+        The argument is treated as an integer and presented
+        as the character with that ASCII.
+       </td>
+      </tr>
+
+      <tr>
+       <td><code class="literal">d</code></td>
+       <td>
+        The argument is treated as an integer and presented
+        as a (signed) decimal number.
+       </td>
+      </tr>
+
+      <tr>
+       <td><code class="literal">e</code></td>
+       <td>
+        The argument is treated as scientific notation (e.g. 1.2e+2).
+       </td>
+      </tr>
+
+      <tr>
+       <td><code class="literal">E</code></td>
+       <td>
+        Like the <code class="literal">e</code> specifier but uses
+        uppercase letter (e.g. 1.2E+2).
+       </td>
+      </tr>
+
+      <tr>
+       <td><code class="literal">f</code></td>
+       <td>
+        The argument is treated as a float and presented
+        as a floating-point number (locale aware).
+       </td>
+      </tr>
+
+      <tr>
+       <td><code class="literal">F</code></td>
+       <td>
+        The argument is treated as a float and presented
+        as a floating-point number (non-locale aware).
+       </td>
+      </tr>
+
+      <tr>
+       <td><code class="literal">g</code></td>
+       <td>
+        <p class="para">
+         General format.
+        </p>
+        <p class="para">
+         Let P equal the precision if nonzero, 6 if the precision is omitted,
+         or 1 if the precision is zero.
+         Then, if a conversion with style E would have an exponent of X:
+        </p>
+        <p class="para">
+         If P &gt; X ≥ −4, the conversion is with style f and precision P − (X + 1).
+         Otherwise, the conversion is with style e and precision P − 1.
+        </p>
+       </td>
+      </tr>
+
+      <tr>
+       <td><code class="literal">G</code></td>
+       <td>
+        Like the <code class="literal">g</code> specifier but uses
+        <code class="literal">E</code> and <code class="literal">f</code>.
+       </td>
+      </tr>
+
+      <tr>
+       <td><code class="literal">h</code></td>
+       <td>
+        Like the <code class="literal">g</code> specifier but uses <code class="literal">F</code>.
+        Available as of PHP 8.0.0.
+       </td>
+      </tr>
+
+      <tr>
+       <td><code class="literal">H</code></td>
+       <td>
+        Like the <code class="literal">g</code> specifier but uses
+        <code class="literal">E</code> and <code class="literal">F</code>. Available as of PHP 8.0.0.
+       </td>
+      </tr>
+
+      <tr>
+       <td><code class="literal">o</code></td>
+       <td>
+        The argument is treated as an integer and presented
+        as an octal number.
+       </td>
+      </tr>
+
+      <tr>
+       <td><code class="literal">s</code></td>
+       <td>
+        The argument is treated and presented as a string.
+       </td>
+      </tr>
+
+      <tr>
+       <td><code class="literal">u</code></td>
+       <td>
+        The argument is treated as an integer and presented
+        as an unsigned decimal number.
+       </td>
+      </tr>
+
+      <tr>
+       <td><code class="literal">x</code></td>
+       <td>
+        The argument is treated as an integer and presented
+        as a hexadecimal number (with lowercase letters).
+       </td>
+      </tr>
+
+      <tr>
+       <td><code class="literal">X</code></td>
+       <td>
+        The argument is treated as an integer and presented
+        as a hexadecimal number (with uppercase letters).
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  
+
+  <div class="warning"><strong class="warning">Warning</strong>
+   <p class="para">
+    The <code class="literal">c</code> type specifier ignores padding and width
+   </p>
+  </div>
+
+  <div class="warning"><strong class="warning">Warning</strong>
+   <p class="para">
+    Attempting to use a combination of the string and width specifiers with character sets that require more than one byte per character may result in unexpected results
+   </p>
+  </div>
+
+  <p class="para">
+   Variables will be co-erced to a suitable type for the specifier:
+   </p><table class="doctable table">
+    <caption><strong>Type Handling</strong></caption>
+    
+     <thead>
+      <tr>
+       <th>Type</th>
+       <th>Specifiers</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td><span class="type">string</span></td>
+       <td><code class="literal">s</code></td>
+      </tr>
+
+      <tr>
+       <td><span class="type">int</span></td>
+       <td>
+        <code class="literal">d</code>,
+        <code class="literal">u</code>,
+        <code class="literal">c</code>,
+        <code class="literal">o</code>,
+        <code class="literal">x</code>,
+        <code class="literal">X</code>,
+        <code class="literal">b</code>
+       </td>
+      </tr>
+
+      <tr>
+       <td><span class="type">float</span></td>
+       <td>
+        <code class="literal">e</code>,
+        <code class="literal">E</code>,
+        <code class="literal">f</code>,
+        <code class="literal">F</code>,
+        <code class="literal">g</code>,
+        <code class="literal">G</code>,
+        <code class="literal">h</code>,
+        <code class="literal">H</code>
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  
+ </dd>
+
+
+
+    
+     <dt>
+<code class="parameter">values</code></dt>
+
+     <dd>
+
+      
+     </dd>
+
+    
+   </dl>
+
+  
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.printf-returnvalues">
+  <h3 class="title">Return Values<a class="genanchor" href="https://www.php.net/manual/en/function.printf.php#refsect1-function.printf-returnvalues"> ¶</a></h3>
+  <p class="para">
+   Returns the length of the outputted string.
+  </p>
+ </div>
+
+
+ <div class="refsect1 errors" id="refsect1-function.printf-errors">
+  <h3 class="title">Errors/Exceptions<a class="genanchor" href="https://www.php.net/manual/en/function.printf.php#refsect1-function.printf-errors"> ¶</a></h3>
+  
+  <p class="para">
+   As of PHP 8.0.0, a <span class="classname"><a href="https://www.php.net/manual/en/class.valueerror.php" class="classname">ValueError</a></span> is thrown if the number of arguments is zero.
+   Prior to PHP 8.0.0, a <strong><code>E_WARNING</code></strong> was emitted instead.
+  </p>
+  <p class="para">
+   As of PHP 8.0.0, a <span class="classname"><a href="https://www.php.net/manual/en/class.valueerror.php" class="classname">ValueError</a></span> is thrown if <code class="literal">[width]</code> is less than zero or bigger than <strong><code>PHP_INT_MAX</code></strong>.
+   Prior to PHP 8.0.0, a <strong><code>E_WARNING</code></strong> was emitted instead.
+  </p>
+  <p class="para">
+   As of PHP 8.0.0, a <span class="classname"><a href="https://www.php.net/manual/en/class.valueerror.php" class="classname">ValueError</a></span> is thrown if <code class="literal">[precision]</code> is less than zero or bigger than <strong><code>PHP_INT_MAX</code></strong>.
+   Prior to PHP 8.0.0, a <strong><code>E_WARNING</code></strong> was emitted instead.
+  </p>
+  <p class="para">
+   As of PHP 8.0.0, a <span class="classname"><a href="https://www.php.net/manual/en/class.argumentcounterror.php" class="classname">ArgumentCountError</a></span> is thrown when less arguments are given than required.
+   Prior to PHP 8.0.0, <strong><code>false</code></strong> was returned and a <strong><code>E_WARNING</code></strong> emitted instead.
+  </p>
+
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.printf-changelog">
+  <h3 class="title">Changelog<a class="genanchor" href="https://www.php.net/manual/en/function.printf.php#refsect1-function.printf-changelog"> ¶</a></h3>
+  
+  <table class="doctable informaltable">
+   
+    <thead>
+     <tr>
+      <th>Version</th>
+      <th>Description</th>
+     </tr>
+
+    </thead>
+
+    <tbody class="tbody">
+     <tr>
+      <td>8.0.0</td>
+      <td>
+       This function no longer returns <strong><code>false</code></strong> on failure.
+      </td>
+     </tr>
+
+     <tr>
+      <td>8.0.0</td>
+      <td>
+       Throw a <span class="classname"><a href="https://www.php.net/manual/en/class.valueerror.php" class="classname">ValueError</a></span> if the number of arguments is zero;
+       previously this function emitted a <strong><code>E_WARNING</code></strong> instead.
+      </td>
+     </tr>
+
+     <tr>
+      <td>8.0.0</td>
+      <td>
+       Throw a <span class="classname"><a href="https://www.php.net/manual/en/class.valueerror.php" class="classname">ValueError</a></span> if <code class="literal">[width]</code> is less than zero or bigger than <strong><code>PHP_INT_MAX</code></strong>;
+       previously this function emitted a <strong><code>E_WARNING</code></strong> instead.
+      </td>
+     </tr>
+
+     <tr>
+      <td>8.0.0</td>
+      <td>
+       Throw a <span class="classname"><a href="https://www.php.net/manual/en/class.valueerror.php" class="classname">ValueError</a></span> if <code class="literal">[precision]</code> is less than zero or bigger than <strong><code>PHP_INT_MAX</code></strong>;
+       previously this function emitted a <strong><code>E_WARNING</code></strong> instead.
+      </td>
+     </tr>
+
+     <tr>
+      <td>8.0.0</td>
+      <td>
+       Throw a <span class="classname"><a href="https://www.php.net/manual/en/class.argumentcounterror.php" class="classname">ArgumentCountError</a></span> when less arguments are given than required;
+       previously this function emitted a <strong><code>E_WARNING</code></strong> instead.
+      </td>
+     </tr>
+
+    </tbody>
+   
+  </table>
+
+
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.printf-examples">
+  <h3 class="title">Examples<a class="genanchor" href="https://www.php.net/manual/en/function.printf.php#refsect1-function.printf-examples"> ¶</a></h3>
+  <div class="example" id="example-4888">
+    <p><strong>Example #1 <span class="function"><strong>printf()</strong></span>: various examples</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br>$n </span><span style="color: #007700">=  </span><span style="color: #0000BB">43951789</span><span style="color: #007700">;<br></span><span style="color: #0000BB">$u </span><span style="color: #007700">= -</span><span style="color: #0000BB">43951789</span><span style="color: #007700">;<br></span><span style="color: #0000BB">$c </span><span style="color: #007700">= </span><span style="color: #0000BB">65</span><span style="color: #007700">; </span><span style="color: #FF8000">// ASCII 65 is 'A'<br><br>// notice the double %%, this prints a literal '%' character<br></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"%%b = '%b'\n"</span><span style="color: #007700">, </span><span style="color: #0000BB">$n</span><span style="color: #007700">); </span><span style="color: #FF8000">// binary representation<br></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"%%c = '%c'\n"</span><span style="color: #007700">, </span><span style="color: #0000BB">$c</span><span style="color: #007700">); </span><span style="color: #FF8000">// print the ascii character, same as chr() function<br></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"%%d = '%d'\n"</span><span style="color: #007700">, </span><span style="color: #0000BB">$n</span><span style="color: #007700">); </span><span style="color: #FF8000">// standard integer representation<br></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"%%e = '%e'\n"</span><span style="color: #007700">, </span><span style="color: #0000BB">$n</span><span style="color: #007700">); </span><span style="color: #FF8000">// scientific notation<br></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"%%u = '%u'\n"</span><span style="color: #007700">, </span><span style="color: #0000BB">$n</span><span style="color: #007700">); </span><span style="color: #FF8000">// unsigned integer representation of a positive integer<br></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"%%u = '%u'\n"</span><span style="color: #007700">, </span><span style="color: #0000BB">$u</span><span style="color: #007700">); </span><span style="color: #FF8000">// unsigned integer representation of a negative integer<br></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"%%f = '%f'\n"</span><span style="color: #007700">, </span><span style="color: #0000BB">$n</span><span style="color: #007700">); </span><span style="color: #FF8000">// floating point representation<br></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"%%o = '%o'\n"</span><span style="color: #007700">, </span><span style="color: #0000BB">$n</span><span style="color: #007700">); </span><span style="color: #FF8000">// octal representation<br></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"%%s = '%s'\n"</span><span style="color: #007700">, </span><span style="color: #0000BB">$n</span><span style="color: #007700">); </span><span style="color: #FF8000">// string representation<br></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"%%x = '%x'\n"</span><span style="color: #007700">, </span><span style="color: #0000BB">$n</span><span style="color: #007700">); </span><span style="color: #FF8000">// hexadecimal representation (lower-case)<br></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"%%X = '%X'\n"</span><span style="color: #007700">, </span><span style="color: #0000BB">$n</span><span style="color: #007700">); </span><span style="color: #FF8000">// hexadecimal representation (upper-case)<br><br></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"%%+d = '%+d'\n"</span><span style="color: #007700">, </span><span style="color: #0000BB">$n</span><span style="color: #007700">); </span><span style="color: #FF8000">// sign specifier on a positive integer<br></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"%%+d = '%+d'\n"</span><span style="color: #007700">, </span><span style="color: #0000BB">$u</span><span style="color: #007700">); </span><span style="color: #FF8000">// sign specifier on a negative integer<br></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>The above example will output:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>%b = '10100111101010011010101101'
+%c = 'A'
+%d = '43951789'
+%e = '4.39518e+7'
+%u = '43951789'
+%u = '4251015507'
+%f = '43951789.000000'
+%o = '247523255'
+%s = '43951789'
+%x = '29ea6ad'
+%X = '29EA6AD'
+%+d = '+43951789'
+%+d = '-43951789'
+</pre></div>
+    </div>
+   </div>
+
+   <div class="example" id="example-4889">
+    <p><strong>Example #2 <span class="function"><strong>printf()</strong></span>: string specifiers</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br>$s </span><span style="color: #007700">= </span><span style="color: #DD0000">'monkey'</span><span style="color: #007700">;<br></span><span style="color: #0000BB">$t </span><span style="color: #007700">= </span><span style="color: #DD0000">'many monkeys'</span><span style="color: #007700">;<br><br></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"[%s]\n"</span><span style="color: #007700">,        </span><span style="color: #0000BB">$s</span><span style="color: #007700">); </span><span style="color: #FF8000">// standard string output<br></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"[%10s]\n"</span><span style="color: #007700">,      </span><span style="color: #0000BB">$s</span><span style="color: #007700">); </span><span style="color: #FF8000">// right-justification with spaces<br></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"[%-10s]\n"</span><span style="color: #007700">,     </span><span style="color: #0000BB">$s</span><span style="color: #007700">); </span><span style="color: #FF8000">// left-justification with spaces<br></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"[%010s]\n"</span><span style="color: #007700">,     </span><span style="color: #0000BB">$s</span><span style="color: #007700">); </span><span style="color: #FF8000">// zero-padding works on strings too<br></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"[%'#10s]\n"</span><span style="color: #007700">,    </span><span style="color: #0000BB">$s</span><span style="color: #007700">); </span><span style="color: #FF8000">// use the custom padding character '#'<br></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"[%'#*s]\n"</span><span style="color: #007700">, </span><span style="color: #0000BB">10</span><span style="color: #007700">, </span><span style="color: #0000BB">$s</span><span style="color: #007700">); </span><span style="color: #FF8000">// Provide the padding width as an additional argument<br></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"[%10.9s]\n"</span><span style="color: #007700">,    </span><span style="color: #0000BB">$t</span><span style="color: #007700">); </span><span style="color: #FF8000">// right-justification but with a cutoff of 8 characters<br></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"[%-10.9s]\n"</span><span style="color: #007700">,   </span><span style="color: #0000BB">$t</span><span style="color: #007700">); </span><span style="color: #FF8000">// left-justification but with a cutoff of 8 characters<br></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>The above example will output:</p></div>
+    <div class="example-contents screen">
+     <div class="cdata"><pre>[monkey]
+[    monkey]
+[monkey    ]
+[0000monkey]
+[####monkey]
+[####monkey]
+[ many monk]
+[many monk ]
+</pre></div>
+    </div>
+   </div>
+  
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.printf-seealso">
+  <h3 class="title">See Also<a class="genanchor" href="https://www.php.net/manual/en/function.printf.php#refsect1-function.printf-seealso"> ¶</a></h3>
+  <ul class="simplelist">
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/en/function.print.php" class="function" rel="rdfs-seeAlso">print</a> - Output a string</span></li>
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/en/function.sprintf.php" class="function" rel="rdfs-seeAlso">sprintf()</a> - Return a formatted string</span></li>
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/en/function.fprintf.php" class="function" rel="rdfs-seeAlso">fprintf()</a> - Write a formatted string to a stream</span></li>
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/en/function.vprintf.php" class="function" rel="rdfs-seeAlso">vprintf()</a> - Output a formatted string</span></li>
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/en/function.vsprintf.php" class="function" rel="rdfs-seeAlso">vsprintf()</a> - Return a formatted string</span></li>
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/en/function.vfprintf.php" class="function" rel="rdfs-seeAlso">vfprintf()</a> - Write a formatted string to a stream</span></li>
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/en/function.sscanf.php" class="function" rel="rdfs-seeAlso">sscanf()</a> - Parses input from a string according to a format</span></li>
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/en/function.fscanf.php" class="function" rel="rdfs-seeAlso">fscanf()</a> - Parses input from a file according to a format</span></li>
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/en/function.number-format.php" class="function" rel="rdfs-seeAlso">number_format()</a> - Format a number with grouped thousands</span></li>
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/en/function.date.php" class="function" rel="rdfs-seeAlso">date()</a> - Format a Unix timestamp</span></li>
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/en/function.flush.php" class="function" rel="rdfs-seeAlso">flush()</a> - Flush system output buffer</span></li>
+   </ul>
+  
+ </div>
+
+
+</div><section id="usernotes">
+ <div class="head">
+  <span class="action"><a href="https://www.php.net/manual/add-note.php?sect=function.printf&amp;redirect=https://www.php.net/manual/en/function.printf.php">＋<small>add a note</small></a></span>
+  <h3 class="title">User Contributed Notes <span class="count">17 notes</span></h3>
+ </div><div id="allnotes">
+  <div class="note" id="2589">  <div class="votes">
+    <div id="Vu2589">
+    <a href="https://www.php.net/manual/vote-note.php?id=2589&amp;page=function.printf&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd2589">
+    <a href="https://www.php.net/manual/vote-note.php?id=2589&amp;page=function.printf&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V2589" title="55% like this...">
+    18
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.printf.php#2589" class="name">
+  <strong class="user"><em>dhosek at excite dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.printf.php#2589"> ¶</a><div class="date" title="1999-12-05 02:27"><strong>23 years ago</strong></div>
+  <div class="text" id="Hcom2589">
+<div class="phpcode"><code><span class="html">
+Be careful:
+<br>printf ("(9.95 * 100) = %d \n", (9.95 * 100));
+<br>
+<br>'994'
+<br>
+<br>First %d converts a float to an int by truncation.
+<br>
+<br>Second floats are notorious for tiny little rounding errors.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="127520">  <div class="votes">
+    <div id="Vu127520">
+    <a href="https://www.php.net/manual/vote-note.php?id=127520&amp;page=function.printf&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd127520">
+    <a href="https://www.php.net/manual/vote-note.php?id=127520&amp;page=function.printf&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V127520" title="66% like this...">
+    1
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.printf.php#127520" class="name">
+  <strong class="user"><em>Mario M. Junior</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.printf.php#127520"> ¶</a><div class="date" title="2022-08-21 10:32"><strong>8 months ago</strong></div>
+  <div class="text" id="Hcom127520">
+<div class="phpcode"><code><span class="html">
+To provide a more user-friendly interface, you can use colors when printing text in the terminal.<br><br>p('Ordinary text.');<br>p('Warning: Check this out...', 'info');<br>p('Ops! Something went wrong.', 'error');<br>p('Yeah... done!', 'success');<br><br>function p($text, $style = '', $newLine = true) {<br><br>&nbsp; &nbsp; $styles = array(<br>&nbsp; &nbsp; &nbsp; &nbsp; 'success' =&gt; "\033[0;32m%s\033[0m",<br>&nbsp; &nbsp; &nbsp; &nbsp; 'error'&nbsp;&nbsp; =&gt; "\033[31;31m%s\033[0m",<br>&nbsp; &nbsp; &nbsp; &nbsp; 'info'&nbsp; &nbsp; =&gt; "\033[33;33m%s\033[0m",<br><br>&nbsp; &nbsp; &nbsp; &nbsp; 'Black'&nbsp; &nbsp; =&gt; "\033[0;30m%s\033[0m",<br>&nbsp; &nbsp; &nbsp; &nbsp; 'Red'&nbsp; &nbsp; &nbsp; =&gt; "\033[0;31m%s\033[0m",<br>&nbsp; &nbsp; &nbsp; &nbsp; 'Green'&nbsp; &nbsp; =&gt; "\033[0;32m%s\033[0m",<br>&nbsp; &nbsp; &nbsp; &nbsp; 'Yellow'&nbsp;&nbsp; =&gt; "\033[0;33m%s\033[0m",<br>&nbsp; &nbsp; &nbsp; &nbsp; 'Blue'&nbsp; &nbsp;&nbsp; =&gt; "\033[0;34m%s\033[0m",<br>&nbsp; &nbsp; &nbsp; &nbsp; 'Purple'&nbsp;&nbsp; =&gt; "\033[0;35m%s\033[0m",<br>&nbsp; &nbsp; &nbsp; &nbsp; 'Cyan'&nbsp; &nbsp;&nbsp; =&gt; "\033[0;36m%s\033[0m",<br>&nbsp; &nbsp; &nbsp; &nbsp; 'Gray'&nbsp; &nbsp;&nbsp; =&gt; "\033[0;37m%s\033[0m",<br>&nbsp; &nbsp; &nbsp; &nbsp; 'Graphite' =&gt; "\033[1;30m%s\033[0m",<br><br>&nbsp; &nbsp; &nbsp; &nbsp; 'Bold Red'&nbsp; &nbsp; =&gt; "\033[1;31m%s\033[0m",<br>&nbsp; &nbsp; &nbsp; &nbsp; 'Bold Green'&nbsp; =&gt; "\033[1;32m%s\033[0m",<br>&nbsp; &nbsp; &nbsp; &nbsp; 'Bold Yellow' =&gt; "\033[1;33m%s\033[0m",<br>&nbsp; &nbsp; &nbsp; &nbsp; 'Bold Blue'&nbsp;&nbsp; =&gt; "\033[1;34m%s\033[0m",<br>&nbsp; &nbsp; &nbsp; &nbsp; 'Bold Purple' =&gt; "\033[1;35m%s\033[0m",<br>&nbsp; &nbsp; &nbsp; &nbsp; 'Bold Cyan'&nbsp;&nbsp; =&gt; "\033[1;36m%s\033[0m",<br>&nbsp; &nbsp; &nbsp; &nbsp; 'Bold White'&nbsp; =&gt; "\033[1;37m%s\033[0m",<br><br>&nbsp; &nbsp; &nbsp; &nbsp; 'Bg Black'&nbsp; =&gt; "\033[40;1;37m%s\033[0m",<br>&nbsp; &nbsp; &nbsp; &nbsp; 'Bg Red'&nbsp; &nbsp; =&gt; "\033[41;1;37m%s\033[0m",<br>&nbsp; &nbsp; &nbsp; &nbsp; 'Bg Green'&nbsp; =&gt; "\033[42;1;37m%s\033[0m",<br>&nbsp; &nbsp; &nbsp; &nbsp; 'Bg Yellow' =&gt; "\033[43;1;37m%s\033[0m",<br>&nbsp; &nbsp; &nbsp; &nbsp; 'Bg Blue'&nbsp;&nbsp; =&gt; "\033[44;1;37m%s\033[0m",<br>&nbsp; &nbsp; &nbsp; &nbsp; 'Bg Purple' =&gt; "\033[45;1;37m%s\033[0m",<br>&nbsp; &nbsp; &nbsp; &nbsp; 'Bg Cyan'&nbsp;&nbsp; =&gt; "\033[46;1;37m%s\033[0m",<br>&nbsp; &nbsp; &nbsp; &nbsp; 'Bg Gray'&nbsp;&nbsp; =&gt; "\033[47;1;37m%s\033[0m",<br><br>&nbsp; &nbsp; &nbsp; &nbsp; 'Underscore' =&gt; "\033[4;37m%s\033[0m",<br>&nbsp; &nbsp; &nbsp; &nbsp; 'Inverted'&nbsp;&nbsp; =&gt; "\033[7;37m%s\033[0m",<br>&nbsp; &nbsp; &nbsp; &nbsp; 'Blink'&nbsp; &nbsp; &nbsp; =&gt; "\033[5;37m%s\033[0m",<br>&nbsp; &nbsp; );<br><br>&nbsp; &nbsp; $format = '%s';<br><br>&nbsp; &nbsp; if (isset($styles[$style])) {<br>&nbsp; &nbsp; &nbsp; &nbsp; $format = $styles[$style];<br>&nbsp; &nbsp; }<br><br>&nbsp; &nbsp; if ($newLine) {<br>&nbsp; &nbsp; &nbsp; &nbsp; $format .= PHP_EOL;<br>&nbsp; &nbsp; }<br><br>&nbsp; &nbsp; printf($format, $text);<br>}</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="51763">  <div class="votes">
+    <div id="Vu51763">
+    <a href="https://www.php.net/manual/vote-note.php?id=51763&amp;page=function.printf&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd51763">
+    <a href="https://www.php.net/manual/vote-note.php?id=51763&amp;page=function.printf&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V51763" title="50% like this...">
+    1
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.printf.php#51763" class="name">
+  <strong class="user"><em>php at mole dot gnubb dot net</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.printf.php#51763"> ¶</a><div class="date" title="2005-04-10 06:15"><strong>18 years ago</strong></div>
+  <div class="text" id="Hcom51763">
+<div class="phpcode"><code><span class="html">
+[Editor's Note: Or just use vprintf...]
+<br>
+<br>If you want to do something like <span class="default">&lt;?php printf</span><span class="keyword">(</span><span class="string">'There is a difference between %s and %s'</span><span class="keyword">, array(</span><span class="string">'good'</span><span class="keyword">, </span><span class="string">'evil'</span><span class="keyword">)); </span><span class="default">?&gt;</span> (this doesn't work)&nbsp; instead of <span class="default">&lt;?php printf</span><span class="keyword">(</span><span class="string">'There is a difference between %s and %s'</span><span class="keyword">, </span><span class="string">'good'</span><span class="keyword">, </span><span class="string">'evil'</span><span class="keyword">); </span><span class="default">?&gt;</span> you can use this function:
+<br>
+<br><span class="default">&lt;?php
+<br></span><span class="keyword">function </span><span class="default">printf_array</span><span class="keyword">(</span><span class="default">$format</span><span class="keyword">, </span><span class="default">$arr</span><span class="keyword">)
+<br>{
+<br>&nbsp; &nbsp; return </span><span class="default">call_user_func_array</span><span class="keyword">(</span><span class="string">'printf'</span><span class="keyword">, </span><span class="default">array_merge</span><span class="keyword">((array)</span><span class="default">$format</span><span class="keyword">, </span><span class="default">$arr</span><span class="keyword">));
+<br>}
+<br></span><span class="default">?&gt;
+<br></span>
+<br>Use it the following way:
+<br><span class="default">&lt;?php
+<br>$goodevil </span><span class="keyword">= array(</span><span class="string">'good'</span><span class="keyword">, </span><span class="string">'evil'</span><span class="keyword">);
+<br></span><span class="default">printf_array</span><span class="keyword">(</span><span class="string">'There is a difference between %s and %s'</span><span class="keyword">, </span><span class="default">$goodevil</span><span class="keyword">);
+<br></span><span class="default">?&gt;
+<br></span>and it will print:
+<br>There is a difference between good and evil</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="16004">  <div class="votes">
+    <div id="Vu16004">
+    <a href="https://www.php.net/manual/vote-note.php?id=16004&amp;page=function.printf&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd16004">
+    <a href="https://www.php.net/manual/vote-note.php?id=16004&amp;page=function.printf&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V16004" title="48% like this...">
+    -3
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.printf.php#16004" class="name">
+  <strong class="user"><em>deekayen at hotmail dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.printf.php#16004"> ¶</a><div class="date" title="2001-10-11 05:54"><strong>21 years ago</strong></div>
+  <div class="text" id="Hcom16004" style="opacity: 0.55;">
+<div class="phpcode"><code><span class="html">
+You can use this function to format the decimal places in a number:
+<br>
+<br>$num = 2.12;
+<br>printf("%.1f",$num);
+<br>
+<br>prints:
+<br>
+<br>2.1
+<br>
+<br>see also: number_format()</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="19389">  <div class="votes">
+    <div id="Vu19389">
+    <a href="https://www.php.net/manual/vote-note.php?id=19389&amp;page=function.printf&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd19389">
+    <a href="https://www.php.net/manual/vote-note.php?id=19389&amp;page=function.printf&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V19389" title="48% like this...">
+    -4
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.printf.php#19389" class="name">
+  <strong class="user"><em>maybird99 at yahoo dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.printf.php#19389"> ¶</a><div class="date" title="2002-02-26 07:20"><strong>21 years ago</strong></div>
+  <div class="text" id="Hcom19389" style="opacity: 0.45;">
+<div class="phpcode"><code><span class="html">
+instead of writing a function to round off a float (let's call it 'x') accurately, it's much easier to add a small number to x and then truncate it...<br>For example: if you want to round off to the nearest integer, just add 0.5 to x and then truncate it. if x=12.6, then it would calculate 13.1, and truncate it to 13. If x=14.4, it would calculate 14.9 and truncate it to 14.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="107534">  <div class="votes">
+    <div id="Vu107534">
+    <a href="https://www.php.net/manual/vote-note.php?id=107534&amp;page=function.printf&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd107534">
+    <a href="https://www.php.net/manual/vote-note.php?id=107534&amp;page=function.printf&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V107534" title="45% like this...">
+    -15
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.printf.php#107534" class="name">
+  <strong class="user"><em>spiffytech at gmail dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.printf.php#107534"> ¶</a><div class="date" title="2012-02-15 09:11"><strong>11 years ago</strong></div>
+  <div class="text" id="Hcom107534" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+Be careful when relying on typecasting with printf(). For example,<br><br>&nbsp; &nbsp; printf("%d", "17,999") <br><br>returns "17".</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="15562">  <div class="votes">
+    <div id="Vu15562">
+    <a href="https://www.php.net/manual/vote-note.php?id=15562&amp;page=function.printf&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd15562">
+    <a href="https://www.php.net/manual/vote-note.php?id=15562&amp;page=function.printf&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V15562" title="41% like this...">
+    -10
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.printf.php#15562" class="name">
+  <strong class="user"><em>shepard at ameth dot org</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.printf.php#15562"> ¶</a><div class="date" title="2001-09-17 07:37"><strong>21 years ago</strong></div>
+  <div class="text" id="Hcom15562" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+Be sure that the output channel is available to write on before executing printf()!&nbsp; Some functions in classes available from various sources (in my case, DB_Sql::query() in PHPLIB) assume that printing will work, even after the default output stream has been closed.&nbsp; 
+<br>
+<br>For me the issue was most notable in PHP4 session management when I was creating my own sess_write() handler.&nbsp; Since I was unable to find any function that checks for the output stream that printf() uses, I just had to drop the crazy use of the printf(). (does some function already exist to check for the presence of an output stream?)</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="126229">  <div class="votes">
+    <div id="Vu126229">
+    <a href="https://www.php.net/manual/vote-note.php?id=126229&amp;page=function.printf&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd126229">
+    <a href="https://www.php.net/manual/vote-note.php?id=126229&amp;page=function.printf&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V126229" title="31% like this...">
+    -6
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.printf.php#126229" class="name">
+  <strong class="user"><em>steve at myschoolsystems dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.printf.php#126229"> ¶</a><div class="date" title="2021-07-08 02:47"><strong>1 year ago</strong></div>
+  <div class="text" id="Hcom126229" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+To format a dollar value as in $123.00 that may otherwise look like $123&nbsp; use this<br><br>print ('$');&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // the dollar sign in front of our answer<br>printf ('%.2f',$price);</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="27841">  <div class="votes">
+    <div id="Vu27841">
+    <a href="https://www.php.net/manual/vote-note.php?id=27841&amp;page=function.printf&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd27841">
+    <a href="https://www.php.net/manual/vote-note.php?id=27841&amp;page=function.printf&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V27841" title="38% like this...">
+    -13
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.printf.php#27841" class="name">
+  <strong class="user"><em>eugenew at starhub dot net dot sg</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.printf.php#27841"> ¶</a><div class="date" title="2002-12-20 09:13"><strong>20 years ago</strong></div>
+  <div class="text" id="Hcom27841" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+If anyone is looking for writing a quine using printf(),<br>this is my example:<br><br><span class="default">&lt;?php $f</span><span class="keyword">=</span><span class="string">'&lt;?php $f=%c%s%c; printf($f,39,$f,39); ?&gt;'</span><span class="keyword">; </span><span class="default">printf</span><span class="keyword">(</span><span class="default">$f</span><span class="keyword">,</span><span class="default">39</span><span class="keyword">,</span><span class="default">$f</span><span class="keyword">,</span><span class="default">39</span><span class="keyword">); </span><span class="default">?&gt;<br></span><br>This also helps those who are new to printf() see one way of using the 'mixed args' part, rather than just a single argument as in most examples I've seen.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="119585">  <div class="votes">
+    <div id="Vu119585">
+    <a href="https://www.php.net/manual/vote-note.php?id=119585&amp;page=function.printf&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd119585">
+    <a href="https://www.php.net/manual/vote-note.php?id=119585&amp;page=function.printf&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V119585" title="32% like this...">
+    -12
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.printf.php#119585" class="name">
+  <strong class="user"><em>RS</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.printf.php#119585"> ¶</a><div class="date" title="2016-07-12 07:20"><strong>6 years ago</strong></div>
+  <div class="text" id="Hcom119585" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+If your missing features such as "-"*100 to print a single character multiple times you can use the slightly longer and less readable PHP equivalent printf("%'-100s",""); and sprint("%'-100s","").</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="18919">  <div class="votes">
+    <div id="Vu18919">
+    <a href="https://www.php.net/manual/vote-note.php?id=18919&amp;page=function.printf&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd18919">
+    <a href="https://www.php.net/manual/vote-note.php?id=18919&amp;page=function.printf&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V18919" title="35% like this...">
+    -17
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.printf.php#18919" class="name">
+  <strong class="user"><em>ezislis at mail dot ru</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.printf.php#18919"> ¶</a><div class="date" title="2002-02-09 07:25"><strong>21 years ago</strong></div>
+  <div class="text" id="Hcom18919" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+be careful with integers, they cant hold large values.<br><br>printf("%d",10023123553.45634663);<br>will print out: 1433188961 <br>and<br>printf("%.0f",10023123553.45634663);<br>will print out: 10023123553</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="27561">  <div class="votes">
+    <div id="Vu27561">
+    <a href="https://www.php.net/manual/vote-note.php?id=27561&amp;page=function.printf&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd27561">
+    <a href="https://www.php.net/manual/vote-note.php?id=27561&amp;page=function.printf&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V27561" title="35% like this...">
+    -18
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.printf.php#27561" class="name">
+  <strong class="user"><em>dalu at uni SPAMHAM dot de</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.printf.php#27561"> ¶</a><div class="date" title="2002-12-10 10:43"><strong>20 years ago</strong></div>
+  <div class="text" id="Hcom27561" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+copypasted from msdn<br><br>A format specification, which consists of optional and required fields, has the following form:<br><br>%[flags] [width] [.precision] [{h | l | I64 | L}]type<br><br>Each field of the format specification is a single character or a number signifying a particular format option. The simplest format specification contains only the percent sign and a type character (for example, %s). If a percent sign is followed by a character that has no meaning as a format field, the character is copied to stdout. For example, to print a percent-sign character, use %%.<br><br>The optional fields, which appear before the type character, control other aspects of the formatting, as follows: <br><br>type <br>Required character that determines whether the associated argument is interpreted as a character, a string, or a number (see the printf Type Field Characters table. <br>flags <br>Optional character or characters that control justification of output and printing of signs, blanks, decimal points, and octal and hexadecimal prefixes (see the Flag Characters table). More than one flag can appear in a format specification. <br>width <br>Optional number that specifies the minimum number of characters output (see printf Width Specification). <br>precision <br>Optional number that specifies the maximum number of characters printed for all or part of the output field, or the minimum number of digits printed for integer values (see the How Precision Values Affect Type table). <br>h | l | I64 | L <br>Optional prefixes to type-that specify the size of argument (see the Size Prefixes for printf and wprintf Format-Type Specifiers table).</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="22759">  <div class="votes">
+    <div id="Vu22759">
+    <a href="https://www.php.net/manual/vote-note.php?id=22759&amp;page=function.printf&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd22759">
+    <a href="https://www.php.net/manual/vote-note.php?id=22759&amp;page=function.printf&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V22759" title="33% like this...">
+    -20
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.printf.php#22759" class="name">
+  <strong class="user"><em>sam[NOSPAM] at [NOSPAM]kingdomfaith dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.printf.php#22759"> ¶</a><div class="date" title="2002-06-28 12:45"><strong>20 years ago</strong></div>
+  <div class="text" id="Hcom22759" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+I don't know if this is useful to anyone, but here goes! Example for using the printf function to output an object.<br><br>class person<br>{<br>&nbsp; &nbsp; var $name = "";<br>&nbsp; &nbsp; function name($newname = NULL)<br>&nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; if(! is_null($newname))<br>&nbsp; &nbsp; &nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;name=$newname;<br>&nbsp; &nbsp; &nbsp; &nbsp; }<br>&nbsp; &nbsp; &nbsp; &nbsp; return $this-&gt;name;<br>&nbsp; &nbsp; }<br>&nbsp; &nbsp; var $surname = "";<br>&nbsp; &nbsp; function surname($newsurname = NULL)<br>&nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; if(! is_null($newsurname))<br>&nbsp; &nbsp; &nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;surname=$newsurname;<br>&nbsp; &nbsp; &nbsp; &nbsp; }<br>&nbsp; &nbsp; &nbsp; &nbsp; return $this-&gt;surname;<br>&nbsp; &nbsp; }<br>&nbsp; &nbsp; var $age = "";<br>&nbsp; &nbsp; function age($newage = NULL)<br>&nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; if(! is_null($newage))<br>&nbsp; &nbsp; &nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;age=$newage;<br>&nbsp; &nbsp; &nbsp; &nbsp; }<br>&nbsp; &nbsp; &nbsp; &nbsp; return $this-&gt;age;<br>&nbsp; &nbsp; }<br>}<br><br>$bob = new person;<br>$bob-&gt;name('Bob');<br>$bob-&gt;surname('Builder');<br>$bob-&gt;age('50');<br><br>printf("Hi %s, your surname is %s and you are %s years old", $bob-&gt;name, $bob-&gt;surname, $bob-&gt;age);<br><br>Outputs:<br><br>Hi Bob, your surname is Builder and you are 50 years old</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="116905">  <div class="votes">
+    <div id="Vu116905">
+    <a href="https://www.php.net/manual/vote-note.php?id=116905&amp;page=function.printf&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd116905">
+    <a href="https://www.php.net/manual/vote-note.php?id=116905&amp;page=function.printf&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V116905" title="35% like this...">
+    -26
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.printf.php#116905" class="name">
+  <strong class="user"><em>creating dot www at gmail dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.printf.php#116905"> ¶</a><div class="date" title="2015-03-18 01:29"><strong>8 years ago</strong></div>
+  <div class="text" id="Hcom116905" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+Why rounding is not same as for round()?<br><br>Try this code:<br><br><span class="default">&lt;?php<br>printf</span><span class="keyword">(</span><span class="string">"%.02lf\n"</span><span class="keyword">, </span><span class="default">1.035</span><span class="keyword">);<br></span><span class="default">printf</span><span class="keyword">(</span><span class="string">"%.02lf\n"</span><span class="keyword">, </span><span class="default">round</span><span class="keyword">(</span><span class="default">1.035</span><span class="keyword">, </span><span class="default">2</span><span class="keyword">));<br></span><span class="default">?&gt;<br></span>Result:<br>1.03<br>1.04<br><br>In my opion it should be:<br>1.04<br>1.04<br><br>Why is that?</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="49505">  <div class="votes">
+    <div id="Vu49505">
+    <a href="https://www.php.net/manual/vote-note.php?id=49505&amp;page=function.printf&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd49505">
+    <a href="https://www.php.net/manual/vote-note.php?id=49505&amp;page=function.printf&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V49505" title="32% like this...">
+    -21
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.printf.php#49505" class="name">
+  <strong class="user"><em>codeslinger at compsalot dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.printf.php#49505"> ¶</a><div class="date" title="2005-01-30 08:24"><strong>18 years ago</strong></div>
+  <div class="text" id="Hcom49505" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+Several people have commented about problems with aligning numbers.&nbsp; I just wanted to add a bit of clarification.<br><br>According to the spec all True Type Fonts (especially porpotional spaced fonts) use a fixed width for numeric digits.&nbsp; All digits have the same width which is equal to the width of "0".<br><br>Where things go haywire when trying to align numbers is that the space character does not have the same width as a digit when using a porportional spaced font.<br><br>Therefore if you want to line up a column of numbers, you can not use leading spaces to position them unless you use the same quantity of space characters for each row. e.g. your numbers have leading zeros etc.<br><br>The simplest solution is to switch to a monospaced font.&nbsp; Alternativly you can use positioning tags.<br><br>Summary: Your numbers will always line up properly regardless of the font used, if you get the starting position to be consistant.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="74215">  <div class="votes">
+    <div id="Vu74215">
+    <a href="https://www.php.net/manual/vote-note.php?id=74215&amp;page=function.printf&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd74215">
+    <a href="https://www.php.net/manual/vote-note.php?id=74215&amp;page=function.printf&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V74215" title="30% like this...">
+    -21
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.printf.php#74215" class="name">
+  <strong class="user"><em>kalai_msc29 at rediffmail dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.printf.php#74215"> ¶</a><div class="date" title="2007-03-29 11:04"><strong>16 years ago</strong></div>
+  <div class="text" id="Hcom74215" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+//If you want to make many Hidden fields you can use the function <br>//You can pass the values as array value,This will help you, when you are going to post many hiddend fields:-<br>function MakeHidden($ArrValues)<br>&nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp;&nbsp; global $dearvar;<br>&nbsp; &nbsp; &nbsp;&nbsp; echo $dearvar; <br>&nbsp; &nbsp; &nbsp;&nbsp; if(is_array($ArrValues)){<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; foreach($ArrValues as $key=&gt;$values)<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; echo $MakeHTML = "&lt;input type='hidden' name='$values' value='$values'&gt;";<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; }<br>&nbsp; &nbsp; &nbsp; }&nbsp; &nbsp; <br>&nbsp; &nbsp; &nbsp; <br>&nbsp; &nbsp; &nbsp; <br>&nbsp; &nbsp; &nbsp; else {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo $MakeHTML = "&lt;input type='hidden' name='$ArrValues' value='$ArrValues'&gt;";<br>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; }<br>&nbsp;&nbsp; return $MakeHTML;<br>}<br><br>//example:-<br><br>MakeHidden(array("value1","value2","value3"));<br><br>//OutPut :-<br><br>&lt;input type="hidden" value="value1" name="value1"/&gt;<br>&lt;input type="hidden" value="value2" name="value2"/&gt;<br>&lt;input type="hidden" value="value3" name="value3"/&gt;</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="40441">  <div class="votes">
+    <div id="Vu40441">
+    <a href="https://www.php.net/manual/vote-note.php?id=40441&amp;page=function.printf&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd40441">
+    <a href="https://www.php.net/manual/vote-note.php?id=40441&amp;page=function.printf&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V40441" title="31% like this...">
+    -24
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/en/function.printf.php#40441" class="name">
+  <strong class="user"><em>lordfarquaad at notredomaine dot net</em></strong></a><a class="genanchor" href="https://www.php.net/manual/en/function.printf.php#40441"> ¶</a><div class="date" title="2004-03-03 06:48"><strong>19 years ago</strong></div>
+  <div class="text" id="Hcom40441" style="opacity: 0.35;">
+<div class="phpcode"><code><span class="html">
+In response to chris dot breen at accurate dot com :<br><br>This will work, but i didn't try:<br><span class="default">&lt;?php <br>$format </span><span class="keyword">= </span><span class="string">'The %2$s contains %1$d monkeys. <br>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; That is a nice %2$s full of %1$d monkeys.'</span><span class="keyword">; <br></span><span class="default">printf</span><span class="keyword">(</span><span class="default">$format</span><span class="keyword">, </span><span class="default">$num</span><span class="keyword">, </span><span class="default">$location</span><span class="keyword">); <br></span><span class="default">?&gt;<br></span><br>Your problem came from the fact that in the string "\$s", the $ is simply escaped by the \, but but you must not do that with single quoted strings. Try to echo your strings to test it, or just go to <a href="http://www.php.net/manual/en/language.types.string.php" rel="nofollow" target="_blank">http://www.php.net/manual/en/language.types.string.php</a></span>
+</code></div>
+  </div>
+ </div></div>
+<div class="foot"><a href="https://www.php.net/manual/add-note.php?sect=function.printf&amp;redirect=https://www.php.net/manual/en/function.printf.php">＋<small>add a note</small></a></div>
+</section>    </section><!-- layout-content -->
+        <aside class="layout-menu">
+
+        <ul class="parent-menu-list">
+                                    <li>
+                <a href="https://www.php.net/manual/en/ref.strings.php">String Functions</a>
+
+                                    <ul class="child-menu-list">
+
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.addcslashes.php" title="addcslashes">addcslashes</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.addslashes.php" title="addslashes">addslashes</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.bin2hex.php" title="bin2hex">bin2hex</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.chop.php" title="chop">chop</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.chr.php" title="chr">chr</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.chunk-split.php" title="chunk_​split">chunk_​split</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.convert-uudecode.php" title="convert_​uudecode">convert_​uudecode</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.convert-uuencode.php" title="convert_​uuencode">convert_​uuencode</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.count-chars.php" title="count_​chars">count_​chars</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.crc32.php" title="crc32">crc32</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.crypt.php" title="crypt">crypt</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.echo.php" title="echo">echo</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.explode.php" title="explode">explode</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.fprintf.php" title="fprintf">fprintf</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.get-html-translation-table.php" title="get_​html_​translation_​table">get_​html_​translation_​table</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.hebrev.php" title="hebrev">hebrev</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.hex2bin.php" title="hex2bin">hex2bin</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.html-entity-decode.php" title="html_​entity_​decode">html_​entity_​decode</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.htmlentities.php" title="htmlentities">htmlentities</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.htmlspecialchars-decode.php" title="htmlspecialchars_​decode">htmlspecialchars_​decode</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.htmlspecialchars.php" title="htmlspecialchars">htmlspecialchars</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.implode.php" title="implode">implode</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.join.php" title="join">join</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.lcfirst.php" title="lcfirst">lcfirst</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.levenshtein.php" title="levenshtein">levenshtein</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.localeconv.php" title="localeconv">localeconv</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.ltrim.php" title="ltrim">ltrim</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.md5-file.php" title="md5_​file">md5_​file</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.md5.php" title="md5">md5</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.metaphone.php" title="metaphone">metaphone</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.money-format.php" title="money_​format">money_​format</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.nl-langinfo.php" title="nl_​langinfo">nl_​langinfo</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.nl2br.php" title="nl2br">nl2br</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.number-format.php" title="number_​format">number_​format</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.ord.php" title="ord">ord</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.parse-str.php" title="parse_​str">parse_​str</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.print.php" title="print">print</a>
+                        </li>
+                                                <li class="current">
+                            <a href="https://www.php.net/manual/en/function.printf.php" title="printf">printf</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.quoted-printable-decode.php" title="quoted_​printable_​decode">quoted_​printable_​decode</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.quoted-printable-encode.php" title="quoted_​printable_​encode">quoted_​printable_​encode</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.quotemeta.php" title="quotemeta">quotemeta</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.rtrim.php" title="rtrim">rtrim</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.setlocale.php" title="setlocale">setlocale</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.sha1-file.php" title="sha1_​file">sha1_​file</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.sha1.php" title="sha1">sha1</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.similar-text.php" title="similar_​text">similar_​text</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.soundex.php" title="soundex">soundex</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.sprintf.php" title="sprintf">sprintf</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.sscanf.php" title="sscanf">sscanf</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.str-contains.php" title="str_​contains">str_​contains</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.str-ends-with.php" title="str_​ends_​with">str_​ends_​with</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.str-getcsv.php" title="str_​getcsv">str_​getcsv</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.str-ireplace.php" title="str_​ireplace">str_​ireplace</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.str-pad.php" title="str_​pad">str_​pad</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.str-repeat.php" title="str_​repeat">str_​repeat</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.str-replace.php" title="str_​replace">str_​replace</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.str-rot13.php" title="str_​rot13">str_​rot13</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.str-shuffle.php" title="str_​shuffle">str_​shuffle</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.str-split.php" title="str_​split">str_​split</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.str-starts-with.php" title="str_​starts_​with">str_​starts_​with</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.str-word-count.php" title="str_​word_​count">str_​word_​count</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.strcasecmp.php" title="strcasecmp">strcasecmp</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.strchr.php" title="strchr">strchr</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.strcmp.php" title="strcmp">strcmp</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.strcoll.php" title="strcoll">strcoll</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.strcspn.php" title="strcspn">strcspn</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.strip-tags.php" title="strip_​tags">strip_​tags</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.stripcslashes.php" title="stripcslashes">stripcslashes</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.stripos.php" title="stripos">stripos</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.stripslashes.php" title="stripslashes">stripslashes</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.stristr.php" title="stristr">stristr</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.strlen.php" title="strlen">strlen</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.strnatcasecmp.php" title="strnatcasecmp">strnatcasecmp</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.strnatcmp.php" title="strnatcmp">strnatcmp</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.strncasecmp.php" title="strncasecmp">strncasecmp</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.strncmp.php" title="strncmp">strncmp</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.strpbrk.php" title="strpbrk">strpbrk</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.strpos.php" title="strpos">strpos</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.strrchr.php" title="strrchr">strrchr</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.strrev.php" title="strrev">strrev</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.strripos.php" title="strripos">strripos</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.strrpos.php" title="strrpos">strrpos</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.strspn.php" title="strspn">strspn</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.strstr.php" title="strstr">strstr</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.strtok.php" title="strtok">strtok</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.strtolower.php" title="strtolower">strtolower</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.strtoupper.php" title="strtoupper">strtoupper</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.strtr.php" title="strtr">strtr</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.substr-compare.php" title="substr_​compare">substr_​compare</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.substr-count.php" title="substr_​count">substr_​count</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.substr-replace.php" title="substr_​replace">substr_​replace</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.substr.php" title="substr">substr</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.trim.php" title="trim">trim</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.ucfirst.php" title="ucfirst">ucfirst</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.ucwords.php" title="ucwords">ucwords</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.vfprintf.php" title="vfprintf">vfprintf</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.vprintf.php" title="vprintf">vprintf</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.vsprintf.php" title="vsprintf">vsprintf</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/en/function.wordwrap.php" title="wordwrap">wordwrap</a>
+                        </li>
+                        
+                    </ul>
+                
+            </li>
+                        
+                        <li>
+                <span class="header">Deprecated</span>
+                <ul class="child-menu-list">
+                                    <li class="">
+                        <a href="https://www.php.net/manual/en/function.convert-cyr-string.php" title="convert_​cyr_​string">convert_​cyr_​string</a>
+                    </li>
+                                    <li class="">
+                        <a href="https://www.php.net/manual/en/function.hebrevc.php" title="hebrevc">hebrevc</a>
+                    </li>
+                                    <li class="">
+                        <a href="https://www.php.net/manual/en/function.utf8-decode.php" title="utf8_​decode">utf8_​decode</a>
+                    </li>
+                                    <li class="">
+                        <a href="https://www.php.net/manual/en/function.utf8-encode.php" title="utf8_​encode">utf8_​encode</a>
+                    </li>
+                                </ul>
+            </li>
+                    </ul>
+    </aside>
+
+
+  </div><!-- layout -->
+
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="https://www.php.net/copyright.php">Copyright © 2001-2023 The PHP Group</a></li>
+        <li><a href="https://www.php.net/my.php">My PHP.net</a></li>
+        <li><a href="https://www.php.net/contact.php">Contact</a></li>
+        <li><a href="https://www.php.net/sites.php">Other PHP.net sites</a></li>
+        <li><a href="https://www.php.net/privacy.php">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script src="./PHP_ printf - Manual_files/jquery-3.6.0.min.js.pobrany plik" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="./PHP_ printf - Manual_files/cached(4).php"></script>
+<script src="./PHP_ printf - Manual_files/cached(5).php"></script>
+<script src="./PHP_ printf - Manual_files/cached(6).php"></script>
+<script src="./PHP_ printf - Manual_files/cached(7).php"></script>
+<script src="./PHP_ printf - Manual_files/cached(8).php"></script>
+<script src="./PHP_ printf - Manual_files/cached(9).php"></script>
+
+<a id="toTop" href="javascript:;" style="display: inline;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="./PHP_ printf - Manual_files/to-top@2x.png"></a>
+
+
+
+</body></html>
