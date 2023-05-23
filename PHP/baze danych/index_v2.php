@@ -2,7 +2,7 @@
 $host = "127.0.0.1";
 $dbUser = 'root';
 $password = '';
-$database = '3infA';
+$database = '3infa';
 $conn = mysqli_connect($host,$dbUser,$password,$database);
 if($conn){
     echo 'działa';
